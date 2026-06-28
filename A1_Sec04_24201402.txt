@@ -1,4 +1,4 @@
-//Task 1
+//Assignment Task 01: Row Rotation Policy
 
 public static Integer rowRotation( Integer examWeek, String[][] matrix ){
 
@@ -26,4 +26,27 @@ public static Integer rowRotation( Integer examWeek, String[][] matrix ){
         }
         
         return null;
+    }
+
+//Assignment Task 02: Matrix Compression
+
+public static Integer[][] compressMatrix( Integer[][] matrix ){
+
+        int row = matrix.length;
+        int column = matrix[0].length;
+
+        Integer[][] compressed_matrix = new Integer[row / 2][column / 2];
+
+        for(int i = 0; i < row; i += 2) {
+            for(int j = 0; j < column; j += 2) {
+                int block_sum = matrix[i][j] +
+                                matrix[i][j + 1] + 
+                                matrix[i + 1][j] +
+                                matrix[i + 1][j + 1];
+
+                compressed_matrix[i / 2][j / 2] = block_sum;
+            }
+        }
+        
+        return compressed_matrix;
     }
