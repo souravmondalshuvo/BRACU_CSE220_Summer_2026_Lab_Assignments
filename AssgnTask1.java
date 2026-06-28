@@ -11,6 +11,30 @@ class AssgnTask1{
         //Only the integer row number is to be returned
 
         //TO DO
+
+        int total_rows = matrix.length;
+        int shift = (examWeek - 1) % total_rows;
+
+        for(int i = 0; i < shift; i++) {
+            String[] back_row = matrix[total_rows - 1];
+
+            for(int j = total_rows - 1; j > 0; j--) {
+                matrix[j] = matrix[j - 1];
+            }
+
+            matrix[0] = back_row;
+        }
+
+        Arr.print2D(matrix);
+
+        for(int i = 0; i < total_rows; i++) {
+            for(int j = 0; j < matrix[i].length; j++) {
+                if(matrix[i][j].equals("AA")) {
+                    return i + 1;
+                }
+            }
+        }
+        
         return null;
     }
 
