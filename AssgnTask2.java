@@ -9,8 +9,25 @@ class AssgnTask2{
         
         //TO DO
 
+        int row = matrix.length;
+        int column = matrix[0].length;
+
+        Integer[][] compressed_matrix = new Integer[row / 2][column / 2];
+
+        for(int i = 0; i < row; i += 2) {
+            for(int j = 0; j < column; j += 2) {
+                int block_sum = matrix[i][j] +
+                                matrix[i][j + 1] + 
+                                matrix[i + 1][j] +
+                                matrix[i + 1][j + 1];
+
+                compressed_matrix[i / 2][j / 2] = block_sum;
+            }
+        }
+
         //remove the line below and return the newly created Compressed 2D matrix
-        return null;
+        // return null;
+        return compressed_matrix;
     }
 
     //DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE
