@@ -1,0 +1,151 @@
+//Assignment Task 01: Row Rotation Policy
+
+public static Integer rowRotation( Integer examWeek, String[][] matrix ){
+
+        int total_rows = matrix.length;
+        int shift = (examWeek - 1) % total_rows;
+
+        for(int i = 0; i < shift; i++) {
+            String[] back_row = matrix[total_rows - 1];
+
+            for(int j = total_rows - 1; j > 0; j--) {
+                matrix[j] = matrix[j - 1];
+            }
+
+            matrix[0] = back_row;
+        }
+
+        Arr.print2D(matrix);
+
+        for(int i = 0; i < total_rows; i++) {
+            for(int j = 0; j < matrix[i].length; j++) {
+                if(matrix[i][j].equals("AA")) {
+                    return i + 1;
+                }
+            }
+        }
+        
+        return null;
+    }
+
+//Assignment Task 02: Matrix Compression
+
+public static Integer[][] compressMatrix( Integer[][] matrix ){
+
+        int row = matrix.length;
+        int column = matrix[0].length;
+
+        Integer[][] compressed_matrix = new Integer[row / 2][column / 2];
+
+        for(int i = 0; i < row; i += 2) {
+            for(int j = 0; j < column; j += 2) {
+                int block_sum = matrix[i][j] +
+                                matrix[i][j + 1] + 
+                                matrix[i + 1][j] +
+                                matrix[i + 1][j + 1];
+
+                compressed_matrix[i / 2][j / 2] = block_sum;
+            }
+        }
+        
+        return compressed_matrix;
+    }
+
+//Assignment Task 03: Game Arena
+
+public static void playGame( Integer[][] arena ){
+
+        int points = 0;
+        boolean found_exit = false;
+
+        for(int i = 0; i < arena.length; i++) {
+            int floor = 0;
+            int pit = 0;
+            boolean hostile_row = false;
+
+            for(int j = 0; j < arena[i].length; j++) {
+                int value = arena[i][j];
+
+                if(value == 200) {
+                    found_exit = true;
+                }
+
+                if(value == 2) {
+                    floor++;
+                } else if(value == 0) {
+                    pit++;
+                } else if(value != 1) {
+                    hostile_row = true;
+                }
+            }
+
+            if(!hostile_row && floor > pit) {
+                points += floor * 2;
+            }
+        }
+
+        System.out.print("Points Gained: " + points + ". ");
+        
+        if(found_exit) {
+            System.out.println("Your team has survived the game.");
+        } else {
+            System.out.println("Your team is out.");
+        }
+    }
+
+//Assignment Task 04: Rotate Secret
+
+public static void rotateSecret( Character[][] board ){
+
+        int row = board.length;
+        int total_layer = row / 2;
+
+        for(int i = 0; i < total_layer; i++) {
+
+            int minimum = i;
+            int maximum = row - 1 - i;
+            int rotation = total_layer - i;
+
+            for(int j = 0; j < rotation; j++) {
+
+                char previous = board[minimum + 1][minimum];
+
+                for(int k = minimum; k <= maximum; k++) {
+
+                    char temp = board[minimum][k];
+                    board[minimum][k] = previous;
+                    previous = temp;
+                }
+
+                for(int l = minimum + 1; l <= maximum; l++) {
+
+                    char temp = board[l][maximum];
+                    board[l][maximum] = previous;
+                    previous = temp;
+                }
+
+                for(int m = maximum - 1; m >= minimum; m--) {
+                    
+                    char temp = board[maximum][m];
+                    board[maximum][m] = previous;
+                    previous = temp;
+                }
+
+                for(int n = maximum - 1; n >= minimum; n--) {
+
+                    char temp = board[n][minimum];
+                    board[n][minimum] = previous;
+                    previous = temp;
+                }
+            }
+        }
+
+        for(int i = 0; i < row; i++) {
+            for(int j = 0; j < row; j++) {
+                
+                System.out.print(board[i][j]);
+            }
+        }
+
+        System.out.println();
+    }
