@@ -92,7 +92,7 @@ public static void playGame( Integer[][] arena ){
             System.out.println("Your team is out.");
         }
     }
-
+ 
 //Assignment Task 04: Rotate Secret
 
 public static void rotateSecret( Character[][] board ){
