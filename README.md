@@ -22,6 +22,7 @@ Each folder corresponds to a specific lab assignment:
 ```text
 CSE220_Spring_2026_Lab_Assignments/
 ├── CSE220 Spring 2026 Lab Assignments 1/
+├── CSE220 Spring 2026 Lab Assignments 2/
 ├── .gitignore
 ├── LICENSE
 └── README.md
