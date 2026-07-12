@@ -10,6 +10,13 @@ public class Patient{
 
     public Patient(Integer id,String name,Integer age,String bloodGroup,Patient next,Patient prev){
         // To Do
+
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.bloodGroup = bloodGroup;
+        this.next = next;
+        this.prev = prev;
     }
 
 }
