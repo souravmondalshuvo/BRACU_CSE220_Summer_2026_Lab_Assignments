@@ -58,6 +58,30 @@
                 index++;
             }
         }
-        
+
         return head;
+    }
+
+// AssignmentTask3: Alternate Merge
+
+    public static Node alternateMerge( Node head1, Node head2 ){
+
+        Node walk1 = head1;
+        Node walk2 = head2;
+
+        while(walk1 != null && walk2 != null) {
+            Node rest1 = walk1.next;
+            Node rest2 = walk2.next;
+
+            walk1.next = walk2;
+
+            if(rest1 != null) {
+                walk2.next = rest1;
+            }
+
+            walk1 = rest1;
+            walk2 = rest2;
+        }
+        
+        return head1;
     }
