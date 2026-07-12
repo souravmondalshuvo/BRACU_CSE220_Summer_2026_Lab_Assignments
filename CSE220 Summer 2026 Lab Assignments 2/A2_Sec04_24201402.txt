@@ -22,3 +22,42 @@
             return "Not Similar";
         }
     }
+
+// AssignmentTask2: Organize Books
+
+    public static Node organizeBooks(Node head, Integer[] popularity) {
+
+        if(head == null) {
+            return null;
+        }
+
+        boolean kono_kichu_swapped_hoise = true;
+
+        while(kono_kichu_swapped_hoise) {
+            kono_kichu_swapped_hoise = false;
+            
+            Node current = head;
+            int index = 0;
+
+            while(current.next != null) {
+                if(popularity[index] < popularity[index + 1]) {
+                    String title_hold_kore = (String)current.elem;
+
+                    current.elem = current.next.elem;
+                    current.next.elem = title_hold_kore;
+
+                    Integer score_hold_kore = popularity[index];
+
+                    popularity[index] = popularity[index + 1];
+                    popularity[index + 1] = score_hold_kore;
+
+                    kono_kichu_swapped_hoise = true;
+                }
+
+                current = current.next;
+                index++;
+            }
+        }
+        
+        return head;
+    }
