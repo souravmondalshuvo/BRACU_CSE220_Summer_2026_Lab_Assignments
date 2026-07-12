@@ -21,6 +21,17 @@ public class WRM {
 
     public void servePatient() {
         // To do
+
+        if(dh.next == dh) {
+            System.out.println("No patient is waiting to be served.");
+            return;
+        }
+
+        Patient front = dh.next;
+        System.out.println("Serving patient: " + front.id);
+
+        dh.next = front.next;
+        front.next.prev = dh;
     }
 
     public void showAllPatient() {
