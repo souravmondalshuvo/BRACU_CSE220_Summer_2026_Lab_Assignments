@@ -11,6 +11,12 @@ public class WRM {
 
     public void registerPatient(int id, String name, int age, String bloodgroup) {
         // To Do
+
+        Patient back = dh.prev;
+        Patient joined = new Patient(id, name, age, bloodgroup, dh, back);
+
+        back.next = joined;
+        dh.prev = joined;
     }
 
     public void servePatient() {
