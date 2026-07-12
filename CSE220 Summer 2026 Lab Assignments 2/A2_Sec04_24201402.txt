@@ -1,0 +1,24 @@
+//Lab Assignment 2 (Part 1)
+
+// AssignmentTask1: Building Blocks
+
+    public static String checkSimilar( Node building1, Node building2 ){
+
+        Node a = building1;
+        Node b = building2;
+
+        while(a != null && b != null) {
+            if(!a.elem.equals(b.elem)) {
+                return "Not Similar";
+            }
+
+            a = a.next;
+            b = b.next;
+        }
+
+        if(a == null && b == null) {
+            return "Similar";
+        } else {
+            return "Not Similar";
+        }
+    }
