@@ -59,6 +59,9 @@ public class WRM {
 
     public void cancelAll() {
         // To Do
+
+        dh.next = dh;
+        dh.prev = dh;
     }
 
 
