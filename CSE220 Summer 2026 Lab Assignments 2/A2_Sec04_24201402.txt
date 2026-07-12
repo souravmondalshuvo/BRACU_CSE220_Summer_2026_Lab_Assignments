@@ -82,6 +82,42 @@
             walk1 = rest1;
             walk2 = rest2;
         }
-        
+
         return head1;
+    }
+
+// AssignmentTask4: ID Generator
+
+    public static Node idGenerator(Node head1, Node head2, Node head3) {
+
+        Node id_head = null;
+        Node cursor = head1;
+
+        while(cursor != null) {
+            id_head = new Node((int) cursor.elem, id_head);
+            cursor = cursor.next;
+        }
+
+        Node tail = id_head;
+
+        while(tail != null && tail.next != null) {
+            tail = tail.next;
+        }
+
+        Node p2 = head2;
+        Node p3 = head3;
+
+        while(p2 != null && p3 != null) {
+            int sob_eksathe = (int) p2.elem + (int) p3.elem;
+            sob_eksathe = sob_eksathe % 10;
+
+            Node banailo = new Node(sob_eksathe, null);
+
+            tail.next = banailo;
+            tail = banailo;
+            p2 = p2.next;
+            p3 = p3.next;
+        }
+        
+        return id_head;
     }
