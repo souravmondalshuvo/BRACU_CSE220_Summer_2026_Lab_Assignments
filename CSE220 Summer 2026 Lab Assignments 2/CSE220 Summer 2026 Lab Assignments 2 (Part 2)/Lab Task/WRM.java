@@ -67,6 +67,20 @@ public class WRM {
 
     public void reverseTheLine() {
         // To Do
+
+        Patient current = dh;
+
+        while(current != dh) {
+            Patient temp = current.next;
+            current.next = current.prev;
+            current.prev = temp;
+            current = temp;
+        }
+
+        Patient temp = dh.next;
+
+        dh.next = dh.prev;
+        dh.prev = temp;
     }
 
 }
