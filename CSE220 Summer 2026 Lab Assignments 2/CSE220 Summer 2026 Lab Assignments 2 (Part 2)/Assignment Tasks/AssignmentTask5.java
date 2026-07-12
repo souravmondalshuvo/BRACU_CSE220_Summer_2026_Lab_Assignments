@@ -3,6 +3,29 @@ public class AssignmentTask5 {
     //SUBMIT ONLY THIS METHOD
     public static void sumOddAppend(Node dh) {
         // TO DO
+
+        int odd_er_total = 0;
+
+        Node previous = dh;
+        Node current = dh.next;
+
+        while(current != dh) {
+            int value = (int) current.elem;
+
+            if(value % 2 != 0) {
+                odd_er_total += value;
+                previous.next = current.next;
+                current = current.next;
+            } else {
+                previous = current;
+                current = current.next;
+            }
+        }
+
+        Node node_er_sum = new Node(odd_er_total);
+        node_er_sum.next = dh;
+
+        previous.next = node_er_sum;
     }
 
     //DO NOT SUBMIT THE DRIVER CODE BELOW
