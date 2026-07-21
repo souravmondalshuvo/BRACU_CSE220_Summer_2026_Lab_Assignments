@@ -56,6 +56,8 @@ public class ArrayQueue {
 
     public boolean isEmpty() {
         // TODO: Implement isEmpty
-        return false;
+
+        return size == 0;
+        // return false;
     }
 }
