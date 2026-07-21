@@ -8,6 +8,10 @@ public class FruitNode {
 
     public FruitNode(String name, Integer price){
         // TO DO
+
+        fruit[0] = name;
+        fruit[1] = price;
+        next = null;
     }
     
 }
