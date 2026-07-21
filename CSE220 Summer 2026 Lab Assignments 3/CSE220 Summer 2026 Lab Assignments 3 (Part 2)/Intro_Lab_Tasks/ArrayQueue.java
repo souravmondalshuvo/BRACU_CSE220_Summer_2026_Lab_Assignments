@@ -16,6 +16,15 @@ public class ArrayQueue {
 
     public void enqueue(Object element) {
         // TODO: Implement enqueue
+
+        if(size == queue.length) {
+            System.out.println("Queue Overflow");
+            return;
+        }
+
+        queue[rear] = element;
+        rear = (rear + 1) % queue.length;
+        size++;
     }
 
     public Object dequeue() {
