@@ -90,8 +90,23 @@ public class HashTable {
     public String searchHashtable( Object[] keyValuePair ){
         // TO DO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+        String key = (String) keyValuePair[0];
+        int index = hashFunction(key);
+
+        PairNode node = ht[index];
+
+        while(node != null) {
+            if(node.key.equals(key)) {
+                return "Found";
+            }
+
+            node = node.next;
+        }
+
+        return "Not Found";
+
         //it'll return either "Found" or "Not Found"
-        return null; // remove this line
+        // return null; // remove this line
     }
 
 }
