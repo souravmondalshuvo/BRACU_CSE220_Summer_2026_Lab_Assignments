@@ -71,6 +71,26 @@ public class HashTable {
     //before writing remove you should complete hashFunction
     public void remove( Integer key ){
         // TO DO 
+
+        int index = hashFunction(key);
+
+        PairNode bortoman = ht[index];
+        PairNode otit = null;
+
+        while(bortoman != null) {
+            if(bortoman.key.equals(key)) {
+                if(otit == null) {
+                    ht[index] = bortoman.next;
+                } else {
+                    otit.next = bortoman.next;
+                }
+
+                return;
+            }
+
+            otit = bortoman;
+            bortoman = bortoman.next;
+        }
     }
 
 }
