@@ -39,7 +39,13 @@ public class ArrayStack {
 
     public Object peek() {
         // TODO: Implement peek
-        return null;
+
+        if(isEmpty()) {
+            return null;
+        }
+
+        return stack[top];
+        // return null;
     }
 
     public boolean isEmpty() {
