@@ -57,7 +57,7 @@ public class DancePairs {
         }
 
         if(!cheleder_q.isEmpty()) {
-            System.out.println("Unpaired Male");
+            System.out.println("Unpaired Male:");
 
             String line = "";
 
@@ -72,7 +72,7 @@ public class DancePairs {
         }
 
         if(!meyeder_q.isEmpty()) {
-            System.out.println("Unpaired Female");
+            System.out.println("Unpaired Female:");
 
             String line = "";
 
