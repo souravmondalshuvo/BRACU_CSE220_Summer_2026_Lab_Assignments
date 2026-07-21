@@ -73,3 +73,25 @@
         return "Not Found";
 
     }
+
+//Lab Assignment 3 (Part 2)
+
+// AssignmentTask1: Stack: Conditional Reverse
+
+    public static Stack conditionalReverse(Stack stack) {
+
+        Stack result = new Stack();
+        Integer aage = null;
+
+        while(!stack.isEmpty()) {
+            int bortoman = stack.pop();
+
+            if(aage == null || bortoman != aage) {
+                result.push(bortoman);
+            }
+
+            aage = bortoman;
+        }
+
+        return result;
+    }
