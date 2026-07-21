@@ -36,11 +36,11 @@ public class HashTable {
         int sum = 0;
 
         if(length % 2 == 0) {
-            for(int i = 0; i < length; i++) {
+            for(int i = 0; i < length; i += 2) {
                 sum += (int) key.charAt(i);
             }
         } else {
-            for(int i = 1; i < length; i++) {
+            for(int i = 1; i < length; i += 2) {
                 sum += (int) key.charAt(i);
             }
         }
