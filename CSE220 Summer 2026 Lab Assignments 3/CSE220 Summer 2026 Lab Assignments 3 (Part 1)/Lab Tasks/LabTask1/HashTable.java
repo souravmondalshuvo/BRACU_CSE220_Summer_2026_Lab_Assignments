@@ -56,6 +56,41 @@ public class HashTable {
     //If collision occurs resolve using the steps explained in the question
     public void insert(String key, Integer value){
         // TO DO
+
+        int index = hashFunction(key);
+
+        FruitNode current = ht[index];
+
+        while(current != null) {
+            if(current.fruit[0].equals(key)) {
+                current.fruit[1] = value;
+                return;
+            }
+
+            current = current.next;
+        }
+
+        FruitNode new_node = new FruitNode(key, value);
+
+        if(ht[index] == null) {
+            ht[index] = new_node;
+            return;
+        }
+
+        if(value > (Integer) ht[index].fruit[1]) {
+            new_node.next = ht[index];
+            ht[index] = new_node;
+            return;
+        }
+
+        FruitNode previous = ht[index];
+
+        while(previous.next != null && (Integer) previous.next.fruit[1] >= value) {
+            previous = previous.next;
+        }
+
+        new_node.next = previous.next;
+        previous.next = new_node;
     }
 
 }
