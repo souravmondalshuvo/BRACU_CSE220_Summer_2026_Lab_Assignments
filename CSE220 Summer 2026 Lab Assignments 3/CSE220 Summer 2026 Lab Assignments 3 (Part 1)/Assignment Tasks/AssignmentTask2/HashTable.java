@@ -62,7 +62,26 @@ public class HashTable {
 	//you need to COMPLETE this method
     private int hashFunction( String key ){
         // TO DO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        return -1; //remove this line
+
+        String s = key;
+
+        if(s.length() % 2 != 0) {
+            s = s + "N";
+        }
+
+        int sum = 0;
+
+        for(int i = 0; i < s.length(); i += 2) {
+            int prothom = (int) s.charAt(i);
+            int ditiyo = (int) s.charAt(i + 1);
+            String eksathe = "" + prothom + ditiyo;
+
+            sum += Integer.parseInt(eksathe);
+        }
+
+        return sum % ht.length;
+
+        // return -1; //remove this line
     }
 
 
