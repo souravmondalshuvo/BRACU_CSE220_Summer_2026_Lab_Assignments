@@ -120,3 +120,88 @@
 
         return (String) q.dequeue();
     }
+
+// AssignmentTask3: Stack and Queue: Dancing Pairs
+
+    public static void dance_pair(Stack stk) {
+
+        Queue cheleder_q = new Queue();
+        Queue meyeder_q = new Queue();
+
+        int count = 0;
+
+        while(!stk.isEmpty()) {
+            Dancer prothom = (Dancer) stk.pop();
+
+            if(stk.isEmpty()) {
+                if(prothom.getGender() == 'M') {
+                    cheleder_q.enqueue(prothom);
+                } else {
+                    meyeder_q.enqueue(prothom);
+                }
+
+                break;
+            }
+
+            Dancer ditiyo = (Dancer) stk.pop();
+
+            char g1 = prothom.getGender();
+            char g2 = ditiyo.getGender();
+
+            if(g1 != g2) {
+                count++;
+                System.out.println("#" + count + ": " + prothom + " & " + ditiyo);
+            } else if(g1 == 'F') {
+                meyeder_q.enqueue(prothom);
+                stk.push(ditiyo);
+            } else {
+                if(!meyeder_q.isEmpty()) {
+                    Dancer waiting_meye = (Dancer) meyeder_q.dequeue();
+                    count++;
+                    System.out.println("#" + count + ": " + prothom + " & " + waiting_meye);
+                } else {
+                    cheleder_q.enqueue(prothom);
+                }
+
+                stk.push(ditiyo);
+            }
+        }
+
+        while(!cheleder_q.isEmpty() && !meyeder_q.isEmpty()) {
+            Dancer m = (Dancer) cheleder_q.dequeue();
+            Dancer f = (Dancer) meyeder_q.dequeue();
+            count++;
+            System.out.println("#" + count + ": " + m + " & " + f);
+        }
+
+        if(!cheleder_q.isEmpty()) {
+            System.out.println("Unpaired Male:");
+
+            String line = "";
+
+            while(!cheleder_q.isEmpty()) {
+                line += cheleder_q.dequeue();
+                if(!cheleder_q.isEmpty()) {
+                    line += ", ";
+                }
+
+                System.out.println(line);
+            }
+        }
+
+        if(!meyeder_q.isEmpty()) {
+            System.out.println("Unpaired Female:");
+
+            String line = "";
+
+            while(!meyeder_q.isEmpty()) {
+                line += meyeder_q.dequeue();
+                if(!meyeder_q.isEmpty()) {
+                    line += ", ";
+                }
+
+                System.out.println(line);
+            }
+        }
+
+    }
