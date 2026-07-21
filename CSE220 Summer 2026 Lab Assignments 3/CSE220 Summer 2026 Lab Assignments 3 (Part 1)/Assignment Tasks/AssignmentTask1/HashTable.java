@@ -61,7 +61,9 @@ public class HashTable {
     private int hashFunction( Integer key ){
         // TO DO
 
-        return -1; //remove this line
+        return Math.floorMod(key + 3, ht.length);
+
+        // return -1; //remove this line
     }
 
 
