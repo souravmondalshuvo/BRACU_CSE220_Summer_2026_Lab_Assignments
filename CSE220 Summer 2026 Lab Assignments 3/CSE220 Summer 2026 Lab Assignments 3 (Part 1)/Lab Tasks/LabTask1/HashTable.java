@@ -31,7 +31,23 @@ public class HashTable {
     //you need to COMPLETE this method
     private int hashFunction( String key ){
         // TO DO 
-        return -1; //remove this line
+
+        int length = key.length();
+        int sum = 0;
+
+        if(length % 2 == 0) {
+            for(int i = 0; i < length; i++) {
+                sum += (int) key.charAt(i);
+            }
+        } else {
+            for(int i = 1; i < length; i++) {
+                sum += (int) key.charAt(i);
+            }
+        }
+
+        return sum % ht.length;
+
+        // return -1; //remove this line
     }
 
     //you need to COMPLETE this method
