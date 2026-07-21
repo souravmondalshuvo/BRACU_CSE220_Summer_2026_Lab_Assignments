@@ -24,7 +24,17 @@ public class ArrayStack {
 
     public Object pop() {
         // TODO: Implement pop
-        return null;
+
+        if(isEmpty()) {
+            System.out.println("Stack Underflow");
+            return null;
+        }
+
+        Object removed = stack[top];
+        stack[top] = null;
+        top--;
+        return removed;
+        // return null;
     }
 
     public Object peek() {
