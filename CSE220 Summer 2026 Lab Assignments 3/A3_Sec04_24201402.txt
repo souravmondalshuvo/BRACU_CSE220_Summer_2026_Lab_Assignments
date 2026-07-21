@@ -95,3 +95,28 @@
 
         return result;
     }
+
+// AssignmentTask2: Queue: Hot Potato Game
+
+    public static String hotPotato(String[] players, int k) {
+
+        LinkedListQueue q = new LinkedListQueue();
+
+        for(int i = 0; i < players.length; i++) {
+            q.enqueue(players[i]);
+        }
+
+        int baaki_players = players.length;
+
+        while(baaki_players > 1) {
+            for(int i = 0; i < k; i++) {
+                q.enqueue(q.dequeue());
+            }
+
+            String baad = (String) q.dequeue();
+            System.out.println(baad + " elimminated");
+            baaki_players--;
+        }
+
+        return (String) q.dequeue();
+    }
