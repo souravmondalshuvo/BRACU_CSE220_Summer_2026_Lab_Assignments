@@ -45,7 +45,13 @@ public class ArrayQueue {
 
     public Object peek() {
         // TODO: Implement peek
-        return null;
+
+        if(isEmpty()) {
+            return null;
+        }
+
+        return queue[front];
+        // return null;
     }
 
     public boolean isEmpty() {
