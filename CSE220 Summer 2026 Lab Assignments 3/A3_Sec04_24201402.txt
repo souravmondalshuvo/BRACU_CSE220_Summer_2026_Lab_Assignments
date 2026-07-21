@@ -1,0 +1,32 @@
+//Lab Assignment 3 (Part 1)
+
+// AssignmentTask1: Hashtable: Deletion Operation
+
+    private int hashFunction( Integer key ){
+
+        return Math.floorMod(key + 3, ht.length);
+
+    }
+
+    public void remove( Integer key ){
+
+        int index = hashFunction(key);
+
+        PairNode bortoman = ht[index];
+        PairNode otit = null;
+
+        while(bortoman != null) {
+            if(bortoman.key.equals(key)) {
+                if(otit == null) {
+                    ht[index] = bortoman.next;
+                } else {
+                    otit.next = bortoman.next;
+                }
+
+                return;
+            }
+
+            otit = bortoman;
+            bortoman = bortoman.next;
+        }
+    }
