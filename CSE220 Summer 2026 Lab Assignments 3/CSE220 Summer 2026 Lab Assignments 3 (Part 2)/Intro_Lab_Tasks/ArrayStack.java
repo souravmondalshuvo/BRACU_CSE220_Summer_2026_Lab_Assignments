@@ -50,7 +50,9 @@ public class ArrayStack {
 
     public boolean isEmpty() {
         // TODO: Implement isEmpty
-        return false;
+
+        return top == -1;
+        // return false;
     }
     
 }
