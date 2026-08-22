@@ -2,7 +2,7 @@
 
 // AssignmentTask06 : Substraction of Nodes
 
-public static Integer subtractSummation( BTNode root ){
+    public static Integer subtractSummation( BTNode root ){
 
         if(root == null) {
             return 0;
@@ -24,7 +24,7 @@ public static Integer subtractSummation( BTNode root ){
 
 // AssignmentTask07 : Difference of Level Sum
 
-public static Integer levelSum( BTNode root ){
+    public static Integer levelSum( BTNode root ){
 
         return alternatingWalk(root, -1);
     }
@@ -39,4 +39,25 @@ public static Integer levelSum( BTNode root ){
         int niche = alternatingWalk(node.left, -polarity) + alternatingWalk(node.right, -polarity);
 
         return ojon + niche;
+    }
+
+// AssignmentTask08 : Swap Children Nodes
+
+    public static void swapChild( BTNode root, int lvl, int M ){
+
+        mirrorTop(root, M - lvl);
+    }
+
+    private static void mirrorTop(BTNode node, int budget) {
+
+        if(node == null || budget <= 0) {
+            return;
+        }
+
+        BTNode dhore_rakhe = node.left;
+        node.left = node.right;
+        node.right = dhore_rakhe;
+
+        mirrorTop(node.left, budget - 1);
+        mirrorTop(node.right, budget - 1);
     }
