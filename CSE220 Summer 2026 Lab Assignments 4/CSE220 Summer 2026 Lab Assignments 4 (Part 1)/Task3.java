@@ -24,6 +24,9 @@ public class Task3 {
             // try to understand the difference between
             // printing and returning for a recursive method
             //TO DO
+
+            System.out.println(sumTree(root));
+
         }
         //============================================================================
 
