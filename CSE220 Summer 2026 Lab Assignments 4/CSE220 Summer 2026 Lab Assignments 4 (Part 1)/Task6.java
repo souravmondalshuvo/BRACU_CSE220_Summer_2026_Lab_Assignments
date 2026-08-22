@@ -9,7 +9,24 @@ public class Task6 {
     // You can use extra helper private static methods with extra extra params as per need
     public static Integer subtractSummation( BTNode root ){
         //TO DO
-        return null; //remove this line once ready
+
+        if(root == null) {
+            return 0;
+        }
+
+        return signedWalk(root.left, 1) + signedWalk(root.right, -1);
+        // return null; //remove this line once ready
+    }
+
+    private static int signedWalk(BTNode node, int polarity) {
+
+        if(node == null) {
+            return 0;
+        }
+
+        int ojon = polarity * (Integer) node.elem;
+
+        return ojon + signedWalk(node.left, polarity) + signedWalk(node.right, polarity);
     }
     //============================================================================
 
