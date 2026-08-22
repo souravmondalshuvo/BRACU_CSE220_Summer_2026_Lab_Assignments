@@ -27,6 +27,20 @@ public class Task1 {
         // since the you'll need an extra parameter to track
         // the level. You can call the helper from inside of
         // this method
+
+        postOrderLvlHelper(root, 0);
+    }
+
+    public static void postOrderLvlHelper (BTNode root, int level) {
+        
+        if(root == null) {
+            return;
+        }
+
+        postOrderLvlHelper(root.left, level + 1);
+        postOrderLvlHelper(root.right, level + 1);
+
+        System.out.println(root.elem + ":" + level);
     }
     //==================================================
 
