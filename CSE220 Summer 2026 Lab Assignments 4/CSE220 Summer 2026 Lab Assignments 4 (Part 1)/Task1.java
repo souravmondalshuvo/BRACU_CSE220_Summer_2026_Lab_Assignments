@@ -6,6 +6,15 @@ public class Task1 {
     // You'll traverse the tree pre-order
     public static void preOrder( BTNode root ){
         // TO DO
+
+        if(root == null) {
+            return;
+        }
+
+        System.out.print(root.elem + " ");
+        
+        preOrder(root.left);
+        preOrder(root.right);
     }
     //==================================================
 
