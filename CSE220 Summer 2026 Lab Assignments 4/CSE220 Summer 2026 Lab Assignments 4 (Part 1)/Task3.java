@@ -7,7 +7,13 @@ public class Task3 {
         // No Helper Methods are needed for this task
         public static Integer sumTree( BTNode root ){
             //TO DO
-            return null;//remove this once ready
+
+            if(root == null) {
+                return null;
+            }
+
+            return (Integer) root.elem + sumTree(root.left) + sumTree(root.right);
+            // return null;//remove this once ready
         }
         //===================================TASK#3_2===================================
         // This method takes 1 parameter, the root
