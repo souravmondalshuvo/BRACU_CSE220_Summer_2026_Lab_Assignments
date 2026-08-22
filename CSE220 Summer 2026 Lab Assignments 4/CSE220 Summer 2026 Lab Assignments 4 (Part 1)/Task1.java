@@ -53,6 +53,23 @@ public class Task1 {
         // since the you'll need an extra parameter to track
         // the level. You can call the helper from inside of
         // this method
+
+        inOrderEvenLvlHelper(root, 0);
+    }
+
+    public static void inOrderEvenLvlHelper (BTNode root, int level) {
+        
+        if(root == null) {
+            return;
+        }
+
+        inOrderEvenLvlHelper(root.left, level + 1);
+
+        if(level % 2 == 0) {
+            System.out.println(root.elem + ":" + level);
+        }
+
+        inOrderEvenLvlHelper(root.right, level + 1);
     }
     //==================================================
 
