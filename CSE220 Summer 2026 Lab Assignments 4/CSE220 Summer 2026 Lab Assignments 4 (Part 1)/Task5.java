@@ -9,7 +9,23 @@ public class Task5 {
             // TO DO
             // you'll need to typecast Object into Integer
             // in order to use > or < operators
-            return null;
+
+            if(root == null) {
+                return Integer.MIN_VALUE;
+            }
+
+            int current = (Integer) root.elem;
+            int left_max = maxTree(root.left);
+            int right_max = maxTree(root.right);
+
+            if(current >= left_max && current >= right_max) {
+                return current;
+            } else if(left_max >= current && left_max >= right_max) {
+                return left_max;
+            } else {
+                return right_max;
+            }
+            // return null;
         }
         //============================================================================
 
