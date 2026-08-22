@@ -1,0 +1,26 @@
+// Lab Assignment 4 (Part 1)
+
+// AssignmentTask06 : Substraction of Nodes
+
+public static Integer subtractSummation( BTNode root ){
+        //TO DO
+
+        if(root == null) {
+            return 0;
+        }
+
+        return signedWalk(root.left, 1) + signedWalk(root.right, -1);
+        // return null; //remove this line once ready
+    }
+
+    private static int signedWalk(BTNode node, int polarity) {
+
+        if(node == null) {
+            return 0;
+        }
+
+        int ojon = polarity * (Integer) node.elem;
+
+        return ojon + signedWalk(node.left, polarity) + signedWalk(node.right, polarity);
+    }
+
