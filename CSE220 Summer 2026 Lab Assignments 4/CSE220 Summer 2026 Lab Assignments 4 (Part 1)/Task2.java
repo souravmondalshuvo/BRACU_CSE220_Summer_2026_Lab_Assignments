@@ -6,7 +6,13 @@ public class Task2 {
     // This method return total count of the nodes in the tree
     public static int countNodes( BTNode root ){
         // TO DO
-        return -1; // Remove this line once ready
+
+        if(root == null) {
+            return 0;
+        }
+
+        return 1 + countNodes(root.left) + countNodes(root.right);
+        // return -1; // Remove this line once ready
     }
     //============================================================================
 
