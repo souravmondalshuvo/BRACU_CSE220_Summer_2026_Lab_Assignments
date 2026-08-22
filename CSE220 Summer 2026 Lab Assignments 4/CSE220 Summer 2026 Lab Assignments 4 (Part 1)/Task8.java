@@ -12,6 +12,22 @@ public class Task8 {
     // You can use extra helper private static methods as per need
     public static void swapChild( BTNode root, int lvl, int M ){
         //TO DO
+
+        mirrorTop(root, M - lvl);
+    }
+
+    private static void mirrorTop(BTNode node, int budget) {
+
+        if(node == null || budget <= 0) {
+            return;
+        }
+
+        BTNode dhore_rakhe = node.left;
+        node.left = node.right;
+        node.right = dhore_rakhe;
+
+        mirrorTop(node.left, budget - 1);
+        mirrorTop(node.right, budget - 1);
     }
     //============================================================================
 }
