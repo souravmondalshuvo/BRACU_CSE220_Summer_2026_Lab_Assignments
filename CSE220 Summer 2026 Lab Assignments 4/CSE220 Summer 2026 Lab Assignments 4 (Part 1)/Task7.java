@@ -9,7 +9,21 @@ public class Task7 {
     // You can use extra helper private static methods with extra extra params as per need
     public static Integer levelSum( BTNode root ){
         //TO DO
-        return null; //remove this line once ready
+
+        return alternatingWalk(root, -1);
+        // return null; //remove this line once ready
+    }
+
+    private static int alternatingWalk(BTNode node, int polarity) {
+
+        if(node == null) {
+            return 0;
+        }
+
+        int ojon = polarity * (Integer) node.elem;
+        int niche = alternatingWalk(node.left, -polarity) + alternatingWalk(node.right, -polarity);
+
+        return ojon + niche;
     }
     //============================================================================
 
