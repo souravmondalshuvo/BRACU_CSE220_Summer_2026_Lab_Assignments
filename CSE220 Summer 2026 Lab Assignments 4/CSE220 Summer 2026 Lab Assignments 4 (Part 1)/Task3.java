@@ -9,7 +9,7 @@ public class Task3 {
             //TO DO
 
             if(root == null) {
-                return null;
+                return 0;
             }
 
             return (Integer) root.elem + sumTree(root.left) + sumTree(root.right);
