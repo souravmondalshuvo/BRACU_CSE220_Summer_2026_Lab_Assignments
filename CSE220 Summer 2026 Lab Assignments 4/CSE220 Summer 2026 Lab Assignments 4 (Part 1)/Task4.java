@@ -8,6 +8,18 @@ public class Task4 {
         // No Helper Methods are needed for this task
         public static void printLeafNodes( BTNode root ){
             //TO DO
+
+            if(root == null) {
+                return;
+            }
+
+            if(root.left == null && root.right == null) {
+                System.out.print(root.elem + " ");
+            }
+            
+            printLeafNodes(root.left);
+            printLeafNodes(root.right);
+
         }
         //============================================================================
 
