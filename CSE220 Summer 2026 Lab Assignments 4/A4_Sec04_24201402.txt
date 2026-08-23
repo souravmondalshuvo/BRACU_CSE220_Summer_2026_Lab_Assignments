@@ -94,7 +94,7 @@
         return shongkha + window(node.left, floor, shongkha) + window(node.right, shongkha, ceil);
     }
 
-// AssignmentTask05 : Mirror Sum of a BSTNode
+// AssignmentTask05 : Mirror Sum of a BST
 
     public static Integer mirrorSum( BSTNode root ){
 
@@ -117,4 +117,30 @@
         int bhitorer = facingWalk(baamPasherSide.right, daanPasherSide.left);
 
         return jora + bairer + bhitorer;
+    }
+
+// AssignmentTask06 : Check BST
+
+    public static Boolean isBST( BSTNode root ){
+
+        return withinBounds(root, null, null);
+    }
+
+    private static boolean withinBounds(BSTNode node, Integer floor, Integer ceil) {
+
+        if(node == null) {
+            return true;
+        }
+
+        int shongkha = (Integer) node.elem;
+
+        if(floor != null && shongkha <= floor) {
+            return false;
+        }
+
+        if(ceil != null && shongkha >= ceil) {
+            return false;
+        }
+
+        return withinBounds(node.left, floor, shongkha) && withinBounds(node.right, shongkha, ceil);
     }
