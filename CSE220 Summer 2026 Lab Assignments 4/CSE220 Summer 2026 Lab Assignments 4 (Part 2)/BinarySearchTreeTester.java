@@ -30,22 +30,29 @@ public class BinarySearchTreeTester {
         BSTNode root = new BSTNode(54);
         root.left = new BSTNode(16);
         root.left.left = new BSTNode(-4);
+        root.left.left.left = new BSTNode(-6);
+        root.left.right = new BSTNode(35);
+        root.left.right.left = new BSTNode(20);
+        root.left.right.right = new BSTNode(50);
+        root.right = new BSTNode(66);
+        root.right.left = new BSTNode(58);
+        root.right.right = new BSTNode(71);
         // TO DO
         // CONSTRUCT THE REST OF THE TREE ON YOUR OWN FROM 
         // THE EXAMPLE SHOWN IN THE QUESTION
 
         // Once the you're done creating the tree then uncomment the following lines
         
-        // System.out.println("::Given Binary Tree::");
-        // BSTPrinter.printNode(root);
-        // System.out.println("--------------------------------------------------");
+        System.out.println("::Given Binary Tree::");
+        BSTPrinter.printNode(root);
+        System.out.println("--------------------------------------------------");
         
-        // String t1 = "Task#1a";
-        // Integer out = Task1.maxOfBST(root);
-        // System.out.println(":Expected Output: 71");
-        // System.out.println(":  Your Output  : "+out);
-        // if(out==null || out!=71) failedPrint(t1);
-        // else successPrint(t1);
+        String t1 = "Task#1a";
+        Integer out = Task1.maxOfBST(root);
+        System.out.println(":Expected Output: 71");
+        System.out.println(":  Your Output  : "+out);
+        if(out==null || out!=71) failedPrint(t1);
+        else successPrint(t1);
 
         taskPrint("\n========================== TASK#1b =========================");
         taskPrint("================== InOrder Predecessor =================");
