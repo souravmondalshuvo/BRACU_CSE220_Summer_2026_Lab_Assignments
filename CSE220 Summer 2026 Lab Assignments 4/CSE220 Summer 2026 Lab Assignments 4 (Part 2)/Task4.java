@@ -9,7 +9,32 @@ public class Task4 {
     // You can use extra helper private static methods as per need
     public static Integer rangeSum( BSTNode root, Integer low, Integer high ){
         //TO DO
-        return null; // remove this line
+
+        if(root == null || low == null || high == null) {
+            return 0;
+        }
+
+        return window(root, low, high);
+        // return null; // remove this line
+    }
+
+    private static int window(BSTNode node, int floor, int ceil) {
+
+        if(node == null || floor > ceil) {
+            return 0;
+        }
+            
+        int shongkha = (Integer) node.elem;
+
+        if(shongkha < floor) {
+            return window(node.right, floor, ceil);
+        }
+
+        if(shongkha > floor) {
+            return window(node.left, floor, ceil);
+        }
+
+        return shongkha + window(node.left, floor, shongkha) + window(node.right, floor, shongkha);
     }
     //===============================================================
 
