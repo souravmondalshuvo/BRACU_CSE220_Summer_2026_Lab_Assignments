@@ -8,7 +8,24 @@ public class Task2 {
     // You'll need to find the lowest common ancestor of them and return it
     public static Integer lowestCommonAncestor( BSTNode root, Integer x, Integer y ){
         // TO DO
-        return null; //remove this line
+
+        if(root == null) {
+            return null;
+        }
+
+        while(root != null) {
+
+            if(x < root.elem && y < root.elem) {
+                root = root.left;
+            } else if(x > root.elem && y > root.elem) {
+                root = root.right;
+            } else {
+                return root.elem;
+            }
+        }
+
+        return root.elem;
+        // return null; //remove this line
     }
     //==================================================
 
