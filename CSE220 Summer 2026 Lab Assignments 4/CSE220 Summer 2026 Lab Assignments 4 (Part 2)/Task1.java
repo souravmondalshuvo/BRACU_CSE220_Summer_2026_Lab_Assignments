@@ -43,10 +43,12 @@ public class Task1 {
                 if(current.left != null) {
                     return maxOfBST(current.left);
                 }
+
+                return predecessor;
             }
         }
 
-        return root.elem;
+        return predecessor;
         // return null; //remove this line
     }
     //==================================================
