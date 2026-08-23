@@ -10,7 +10,32 @@ public class Task3 {
     // return the path as a String
     public static String findPath( BSTNode root, Integer key ){
         // TO DO
-        return null; //remove this line
+
+        String path = "";
+
+        if(root == null) {
+            return "No Path Found";
+        }
+
+        while(root != null) {
+
+            path += root.elem;
+
+            if(((Integer) root.elem).equals(key)) {
+                return path;
+            }
+
+            path += " ";
+
+            if(key < root.elem) {
+                root = root.left;
+            } else {
+                root = root.right;
+            }
+        }
+
+        return "No Path Found";
+        // return null; //remove this line
     }
     //============================================================================
 
