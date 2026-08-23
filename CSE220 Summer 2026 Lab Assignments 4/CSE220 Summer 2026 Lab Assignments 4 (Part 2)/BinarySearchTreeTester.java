@@ -203,6 +203,11 @@ public class BinarySearchTreeTester {
         BSTNode root = new BSTNode(30);
         root.left = new BSTNode(10);
         root.left.left = new BSTNode(3);
+        root.left.right = new BSTNode(15);
+        root.right = new BSTNode(40);
+        root.right.left = new BSTNode(35);
+        root.right.right = new BSTNode(55);
+        
         // CONSTRUCT THE REST OF THE TREE ON YOUR OWN
         // FROM THE EXAMPLE SHOWN IN THE QUESTION
         // TO DO
