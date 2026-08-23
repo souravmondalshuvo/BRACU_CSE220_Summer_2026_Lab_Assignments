@@ -120,39 +120,80 @@ public class BinarySearchTreeTester {
         BSTNode root = new BSTNode(15);
         root.left = new BSTNode(10);
         root.left.left = new BSTNode(8);
+        root.left.left.left = new BSTNode(6);
+        root.left.left.right = new BSTNode(9);
+        root.left.right = new BSTNode(12);
+        root.right = new BSTNode(25);
+        root.right.right = new BSTNode(30);
+        root.right.left = new BSTNode(20);
+        root.right.left.left = new BSTNode(18);
+        root.right.left.right = new BSTNode(22);
+        
         // TO DO
         // CONSTRUCT THE REST OF THE TREE ON YOUR OWN FROM 
         // THE EXAMPLE SHOWN IN THE QUESTION
 
         // Once the you're done creating the tree then uncomment the following lines
         
-        // System.out.println("::Given Binary Tree::");
-        // BSTPrinter.printNode(root);
-        // System.out.println("--------------------------------------------------");
+        System.out.println("::Given Binary Tree::");
+        BSTPrinter.printNode(root);
+        System.out.println("--------------------------------------------------");
         
-        // //First test case is already written for you so, don' change it
-        // String t2 = "Task#2 Test#1";
-        // System.out.println(":Expected Output: LCA(6,12)=10");
-        // Integer out = Task2.lowestCommonAncestor(root,6,12);
-        // System.out.println(":  Your Output  : LCA(6,12)="+out);
-        // if(out==null || out!=10) failedPrint(t2);
-        // else successPrint(t2);
+        //First test case is already written for you so, don' change it
+        String t2 = "Task#2 Test#1";
+        System.out.println(":Expected Output: LCA(6,12)=10");
+        Integer out = Task2.lowestCommonAncestor(root,6,12);
+        System.out.println(":  Your Output  : LCA(6,12)="+out);
+        if(out==null || out!=10) failedPrint(t2);
+        else successPrint(t2);
         
-        // //Write the rest of the test cases yourself
+        //Write the rest of the test cases yourself
         
-        // System.out.println("------------------------------");
-        // // Test Case 2 (20,6)
-        // // TO DO
-        // System.out.println("------------------------------");
-        // // Test Case 3 (18,22)
-        // // TO DO
-        // System.out.println("------------------------------");
-        // // Test Case 4 (20,25)
-        // // TO DO
-        // System.out.println("------------------------------");
-        // // Test Case 5 (10,12)
-        // // TO DO
-        // System.out.println("------------------------------");
+        System.out.println("------------------------------");
+        // Test Case 2 (20,6)
+        // TO DO
+
+        String t3 = "Task#2 Test#2";
+        System.out.println(":Expected Output: LCA(20,6)=15");
+        Integer out1 = Task2.lowestCommonAncestor(root,20,6);
+        System.out.println(":  Your Output  : LCA(20,6)="+out1);
+        if(out1==null || out1!=15) failedPrint(t3);
+        else successPrint(t3);
+
+        System.out.println("------------------------------");
+        // Test Case 3 (18,22)
+        // TO DO
+
+        String t4 = "Task#2 Test#3";
+        System.out.println(":Expected Output: LCA(18,22)=20");
+        Integer out2 = Task2.lowestCommonAncestor(root,18,22);
+        System.out.println(":  Your Output  : LCA(18,22)="+out2);
+        if(out2==null || out2!=20) failedPrint(t4);
+        else successPrint(t4);
+
+        System.out.println("------------------------------");
+        // Test Case 4 (20,25)
+        // TO DO
+
+        String t5 = "Task#2 Test#4";
+        System.out.println(":Expected Output: LCA(20,25)=25");
+        Integer out3 = Task2.lowestCommonAncestor(root,20,25);
+        System.out.println(":  Your Output  : LCA(20,25)="+out3);
+        if(out3==null || out3!=25) failedPrint(t5);
+        else successPrint(t5);
+
+        System.out.println("------------------------------");
+        // Test Case 5 (10,12)
+        // TO DO
+
+        String t6 = "Task#2 Test#5";
+        System.out.println(":Expected Output: LCA(10,12)=10");
+        Integer out4 = Task2.lowestCommonAncestor(root,10,12);
+        System.out.println(":  Your Output  : LCA(10,12)="+out4);
+        if(out4==null || out4!=10) failedPrint(t6);
+        else successPrint(t6);
+
+        System.out.println("------------------------------");
     }
     
     public static void task3(){
