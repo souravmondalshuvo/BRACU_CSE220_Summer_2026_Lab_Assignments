@@ -46,7 +46,7 @@ public class Task1 {
             }
         }
 
-        return predecessor;
+        return root.elem;
         // return null; //remove this line
     }
     //==================================================
