@@ -30,7 +30,7 @@ public class Task4 {
             return window(node.right, floor, ceil);
         }
 
-        if(shongkha > floor) {
+        if(shongkha > ceil) {
             return window(node.left, floor, ceil);
         }
 
