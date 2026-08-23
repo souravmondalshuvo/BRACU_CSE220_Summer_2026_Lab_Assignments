@@ -34,7 +34,7 @@ public class Task4 {
             return window(node.left, floor, ceil);
         }
 
-        return shongkha + window(node.left, floor, shongkha) + window(node.right, floor, ceil);
+        return shongkha + window(node.left, floor, shongkha) + window(node.right, shongkha, ceil);
     }
     //===============================================================
 
