@@ -7,7 +7,17 @@ public class Task1 {
     // You'll need to find the max of the BST and return it
     public static Integer maxOfBST( BSTNode root ){
         // TO DO
-        return null; //remove this line
+
+        if(root == null) {
+            return null;
+        }
+
+        while(root.right != null) {
+            root = root.right;
+        }
+
+        return root.elem;
+        // return null; //remove this line
     }
     //==================================================
 
