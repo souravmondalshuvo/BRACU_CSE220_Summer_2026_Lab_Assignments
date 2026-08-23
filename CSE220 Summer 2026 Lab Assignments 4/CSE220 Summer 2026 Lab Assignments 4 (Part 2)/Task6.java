@@ -8,7 +8,28 @@ public class Task6 {
     // You can use extra helper private static methods as per need
     public static Boolean isBST( BSTNode root ){
         //TO DO
-        return null; // remove this line
+
+        return withinBounds(root, null, null);
+        // return null; // remove this line
+    }
+
+    private static boolean withinBounds(BSTNode node, Integer floor, Integer ceil) {
+
+        if(node == null) {
+            return true;
+        }
+
+        int shongkha = (Integer) node.elem;
+
+        if(floor != null && shongkha <= floor) {
+            return false;
+        }
+
+        if(ceil != null && shongkha >= ceil) {
+            return false;
+        }
+
+        return withinBounds(node.left, floor, shongkha) && withinBounds(node.right, shongkha, ceil);
     }
     //===============================================================
 
