@@ -93,3 +93,28 @@
 
         return shongkha + window(node.left, floor, shongkha) + window(node.right, shongkha, ceil);
     }
+
+// AssignmentTask05 : Mirror Sum of a BSTNode
+
+    public static Integer mirrorSum( BSTNode root ){
+
+        if(root == null) {
+            return 0;
+        }
+
+        return facingWalk(root.left, root.right);
+    }
+
+    private static int facingWalk(BSTNode baamPasherSide, BSTNode daanPasherSide) {
+
+        if(baamPasherSide == null || daanPasherSide == null) {
+            return 0;
+        }
+
+        int jora = (Integer) baamPasherSide.elem + (Integer) daanPasherSide.elem;
+
+        int bairer = facingWalk(baamPasherSide.left, daanPasherSide.right);
+        int bhitorer = facingWalk(baamPasherSide.right, daanPasherSide.left);
+
+        return jora + bairer + bhitorer;
+    }
