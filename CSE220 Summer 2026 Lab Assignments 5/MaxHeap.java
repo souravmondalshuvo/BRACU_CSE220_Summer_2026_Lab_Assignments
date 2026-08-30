@@ -40,9 +40,9 @@ public class MaxHeap {
 
     public Integer peek() {
 
-        if(isEmpty()) [
+        if(isEmpty()) {
             return null;
-        ]
+        }
 
         return heap[1];
     }
