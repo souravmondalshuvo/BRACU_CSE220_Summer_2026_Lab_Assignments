@@ -22,4 +22,19 @@ public class MaxHeap {
         heap[size] = value;
         heapifyUp(size);
     }
+
+    public Integer extractMax() {
+
+        if(isEmpty()) {
+            return null;
+        }
+
+        Integer largest = heap[1];
+        heap[1] = heap[size];
+        heap[size] = null;
+        size--;
+        heapifyDown(1);
+
+        return largest;
+    }
 }
