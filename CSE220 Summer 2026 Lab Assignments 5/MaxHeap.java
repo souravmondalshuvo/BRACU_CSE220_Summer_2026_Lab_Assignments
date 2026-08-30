@@ -97,4 +97,15 @@ public class MaxHeap {
 
         return size == 0;
     }
+
+    public Integer[] snapshot() {
+
+        Integer[] copy = new Integer[size];
+
+        for(int i = 1; i <= size; i++) {
+            copy[i - 1] = heap[i];
+        }
+
+        return copy;
+    }
 }
