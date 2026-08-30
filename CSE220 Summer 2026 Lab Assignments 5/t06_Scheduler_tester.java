@@ -21,7 +21,7 @@ public class t06_Scheduler_tester {
         int[] priorities = {2, 5, 3, 1, 4};
 
         String[] expected = {"Meeting", "Debug", "Code Review", "Email", "Lunch"};
-        String[] out = Task6.schedule(names, priorities);
+        String[] out = Scheduler.schedule(names, priorities);
 
         check("Processing order by priority", expected, out);
         System.out.println();
@@ -37,7 +37,7 @@ public class t06_Scheduler_tester {
         int[] priorities = {9, 5, 1};
 
         check("Order preserved", new String[]{"A", "B", "C"},
-              Task6.schedule(names, priorities));
+              Scheduler.schedule(names, priorities));
         System.out.println();
     }
 
@@ -51,7 +51,7 @@ public class t06_Scheduler_tester {
         int[] priorities = {7};
 
         check("Lone task returned", new String[]{"Deploy"},
-              Task6.schedule(names, priorities));
+              Scheduler.schedule(names, priorities));
         System.out.println();
     }
 
@@ -65,7 +65,7 @@ public class t06_Scheduler_tester {
         int[] priorities = {1, 50, 200, 999};
 
         check("Fully reversed", new String[]{"Critical", "High", "Mid", "Low"},
-              Task6.schedule(names, priorities));
+              Scheduler.schedule(names, priorities));
         System.out.println();
     }
 
