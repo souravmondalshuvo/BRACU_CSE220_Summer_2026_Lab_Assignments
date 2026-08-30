@@ -92,4 +92,9 @@ public class MaxHeap {
         heap[a] = heap[b];
         heap[b] = hold;
     }
+
+    public boolean isEmpty() {
+
+        return size == 0;
+    }
 }
