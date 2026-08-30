@@ -18,7 +18,7 @@ public class t04_MachineLoad_tester {
         header("===== Test 1: Sample Input =====");
 
         int[] tasks = {2, 4, 7, 1, 6};
-        Integer[] out = Task4.distribute(tasks, 4);
+        Integer[] out = MachineLoad.distribute(tasks, 4);
 
         // {2, 4, 7, 7} as a multiset — array layout may differ but is still a valid heap
         checkLoads("Loads for tasks=[2,4,7,1,6], m=4", new int[]{2, 4, 7, 7}, out);
@@ -32,7 +32,7 @@ public class t04_MachineLoad_tester {
         header("===== Test 2: Machines > Tasks =====");
 
         int[] tasks = {5, 3};
-        Integer[] out = Task4.distribute(tasks, 4);
+        Integer[] out = MachineLoad.distribute(tasks, 4);
 
         checkLoads("Two idle machines remain at 0", new int[]{0, 0, 3, 5}, out);
         System.out.println();
@@ -45,7 +45,7 @@ public class t04_MachineLoad_tester {
         header("===== Test 3: One Machine =====");
 
         int[] tasks = {2, 4, 7, 1, 6};
-        Integer[] out = Task4.distribute(tasks, 1);
+        Integer[] out = MachineLoad.distribute(tasks, 1);
 
         checkLoads("All 20 units on a single machine", new int[]{20}, out);
         System.out.println();
@@ -58,7 +58,7 @@ public class t04_MachineLoad_tester {
         header("===== Test 4: Even Split =====");
 
         int[] tasks = {5, 5, 5, 5};
-        Integer[] out = Task4.distribute(tasks, 2);
+        Integer[] out = MachineLoad.distribute(tasks, 2);
 
         checkLoads("Balanced across two machines", new int[]{10, 10}, out);
         System.out.println();
