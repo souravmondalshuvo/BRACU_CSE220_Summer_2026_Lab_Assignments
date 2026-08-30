@@ -18,7 +18,7 @@ public class t05_TopK_tester {
         header("===== Test 1: Sample Input =====");
 
         int[] nums = {4, 10, 2, 8, 6, 7};
-        Integer[] out = Task5.topK(nums, 3);
+        Integer[] out = TopK.topK(nums, 3);
 
         check("Top 3 of [4,10,2,8,6,7]", new int[]{10, 8, 7}, out);
         System.out.println();
@@ -31,7 +31,7 @@ public class t05_TopK_tester {
         header("===== Test 2: k = 1 =====");
 
         int[] nums = {4, 10, 2, 8, 6, 7};
-        Integer[] out = Task5.topK(nums, 1);
+        Integer[] out = TopK.topK(nums, 1);
 
         check("Single largest element", new int[]{10}, out);
         System.out.println();
@@ -44,7 +44,7 @@ public class t05_TopK_tester {
         header("===== Test 3: k = n =====");
 
         int[] nums = {4, 10, 2, 8, 6, 7};
-        Integer[] out = Task5.topK(nums, 6);
+        Integer[] out = TopK.topK(nums, 6);
 
         check("Full descending order", new int[]{10, 8, 7, 6, 4, 2}, out);
         System.out.println();
@@ -57,7 +57,7 @@ public class t05_TopK_tester {
         header("===== Test 4: Duplicates & Negatives =====");
 
         int[] nums = {-5, 9, 9, 0, -2, 9};
-        Integer[] out = Task5.topK(nums, 4);
+        Integer[] out = TopK.topK(nums, 4);
 
         check("Handles repeats and negatives", new int[]{9, 9, 9, 0}, out);
         System.out.println();
