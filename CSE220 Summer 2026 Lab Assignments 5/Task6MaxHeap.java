@@ -94,4 +94,9 @@ public class Task6MaxHeap {
         ranks[a] = ranks[b];
         ranks[b] = hold_rank;
     }
+
+    public boolean isEmpty() {
+
+        return size == 0;
+    }
 }
