@@ -37,4 +37,13 @@ public class MaxHeap {
 
         return largest;
     }
+
+    public Integer peek() {
+
+        if(isEmpty()) [
+            return null;
+        ]
+
+        return heap[1];
+    }
 }
