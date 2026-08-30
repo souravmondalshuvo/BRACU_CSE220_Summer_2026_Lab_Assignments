@@ -139,4 +139,24 @@ public class MinHeap {
 
         return copy;
     }
+
+    // ===================== TASK 3 =====================
+    // Out-of-place heap sort: the heap is the scratch space, the original
+    // array is refilled in the order the heap surrenders its minimum.
+
+    public static void outPlaceHeapSort(int[] arr) {
+
+        MinHeap sorter = new MinHeap(arr.length);
+
+        for(int i = 0; i < arr.length; i++) {
+            sorter.insert(arr[i]);
+        }
+
+        int slot = 0;
+
+        while(!sorter.isEmpty()) {
+            arr[slot] = sorter.extractMin();
+            slot++;
+        }
+    }
 }
