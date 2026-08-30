@@ -76,6 +76,19 @@ public class MinHeap {
          Move element up while parent is greater
         */
         // TODO: Implement heapify up
+
+        int parent = index / 2;
+
+        if(parent < 1) {
+            return;
+        }
+
+        if(heap[parent] <= heap[index]) {
+            return;
+        }
+
+        swap(parent, index);
+        heapifyUp(parent);
     }
     private void heapifyDown(int index) {
         /*
