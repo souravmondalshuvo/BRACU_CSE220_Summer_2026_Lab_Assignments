@@ -83,4 +83,15 @@ public class Task6MaxHeap {
         swap(winner, index);
         heapifyDown(winner);
     }
+
+    private void swap(int a, int b) {
+
+        String hold_name = names[a];
+        names[a] = names[b];
+        names[b] = hold_name;
+
+        Integer hold_rank = ranks[a];
+        ranks[a] = ranks[b];
+        ranks[b] = hold_rank;
+    }
 }
