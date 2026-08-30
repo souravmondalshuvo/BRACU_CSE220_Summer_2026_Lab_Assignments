@@ -85,4 +85,11 @@ public class MaxHeap {
         swap(winner, index);
         heapifyDown(winner);
     }
+
+    private void swap(int a, int b) {
+
+        Integer hold = heap[a];
+        heap[a] = heap[b];
+        heap[b] = hold;
+    }
 }
