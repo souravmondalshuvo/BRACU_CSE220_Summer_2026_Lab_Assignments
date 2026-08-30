@@ -60,6 +60,12 @@ public class MinHeap {
          2. Return root value
         */
        // TODO: Implement peek
+
+       if(isEmpty()) {
+        return null;
+       }
+
+       return heap[1];
     }
 
     // --------------------------
