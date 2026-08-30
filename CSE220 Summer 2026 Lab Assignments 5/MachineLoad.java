@@ -8,9 +8,9 @@ public class MachineLoad {
             kaaj.insert(0);
         }
 
-        for(int j = 0; j < tasks.length; j++) {
+        for(int x = 0; x < tasks.length; x++) {
             int ekdom_halka = kaaj.extractMin();
-            kaaj.insert(ekdom_halka + tasks[j]);
+            kaaj.insert(ekdom_halka + tasks[x]);
         }
 
         return kaaj.snapshot();
