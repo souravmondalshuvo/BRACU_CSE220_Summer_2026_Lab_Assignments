@@ -45,4 +45,20 @@ public class Task6MaxHeap {
 
         return winner;
     }
+
+    private void heapifyUp(int index) {
+
+        int parent = index / 2;
+
+        if(parent < 1) {
+            return;
+        }
+
+        if(ranks[parent] >= ranks[index]) {
+            return;
+        }
+
+        swap(parent, index);
+        heapifyUp(parent);
+    }
 }
