@@ -26,4 +26,23 @@ public class Task6MaxHeap {
         ranks[size] = priority;
         heapifyUp(size);
     }
+
+    public String extractMax() {
+
+        if(isEmpty()) {
+            return null;
+        }
+
+        String winner = names[1];
+        names[1] = names[size];
+        names[size] = null;
+
+        ranks[1] = ranks[size];
+        ranks[size] = null;
+
+        size--;
+        heapifyDown(1);
+
+        return winner;
+    }
 }
