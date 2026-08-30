@@ -46,4 +46,21 @@ public class MaxHeap {
 
         return heap[1];
     }
+
+    // Only the direction of the comparison changes from MinHeap.
+    private void heapifyUp(int index) {
+
+        int parent = index / 2;
+
+        if(parent < 1) {
+            return;
+        }
+
+        if(heap[parent] >= heap[index]) {
+            return;
+        }
+
+        swap(parent, index);
+        heapifyUp(parent);
+    }
 }
