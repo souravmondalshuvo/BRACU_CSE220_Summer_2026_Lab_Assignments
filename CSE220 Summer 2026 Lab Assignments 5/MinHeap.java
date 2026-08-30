@@ -39,6 +39,18 @@ public class MinHeap {
          5. Heapify down
         */
         // TODO: Implement extraction logic
+
+        if(isEmpty()) {
+            return null;
+        }
+
+        Integer smallest = heap[1];
+        heap[1] = heap[size];
+        heap[size] = null;
+        size--;
+        heapifyDown(1);
+
+        return smallest;
     }
 
     public Integer peek() {
