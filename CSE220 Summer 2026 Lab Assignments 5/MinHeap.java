@@ -118,5 +118,7 @@ public class MinHeap {
 
     public boolean isEmpty(){
         // TODO: Implement isEmpty
+
+        return size == 0;
     }
 }
