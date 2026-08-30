@@ -18,6 +18,15 @@ public class MinHeap {
         */
 
         // TODO: Implement insert method
+
+        if(size >= capacity) {
+            System.out.println("Heap is full");
+            return;
+        }
+
+        size++;
+        heap[size] = value;
+        heapifyUp(size);
     }
 
     public Integer extractMin() {
