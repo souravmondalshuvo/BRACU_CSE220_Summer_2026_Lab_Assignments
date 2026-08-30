@@ -1,7 +1,7 @@
 public class t04_MachineLoad_tester {
 
     // ANSI color codes for terminal output
-    static final String green = "\u001B[32m", red = "\u001B[31m", blue = "\u001B[34m";
+    static final String green = "\u001B[32m", red = "\u001B[31m", cyan = "\033[0;96m";
     static final String bold = "\u001B[1m", normal = "\033[0;0m";
 
     public static void main(String[] args) {
@@ -117,7 +117,7 @@ public class t04_MachineLoad_tester {
     // Colored printers
     // --------------------------
     private static void header(String text) {
-        System.out.println(blue + bold + text + normal);
+        System.out.println(cyan + bold + text + normal);
     }
 
     private static void pass(String text) {
