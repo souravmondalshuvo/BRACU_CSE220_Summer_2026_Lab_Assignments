@@ -61,4 +61,26 @@ public class Task6MaxHeap {
         swap(parent, index);
         heapifyUp(parent);
     }
+
+    private void heapifyDown(int index) {
+
+        int left = index * 2;
+        int right = index * 2 + 1;
+        int winner = index;
+
+        if(left <= size && ranks[left] > ranks[winner]) {
+            winner = left;
+        }
+
+        if(right <= size && ranks[right] > ranks[winner]) {
+            winner = right;
+        }
+
+        if(winner == index) {
+            return;
+        }
+
+        swap(winner, index);
+        heapifyDown(winner);
+    }
 }
