@@ -4,9 +4,10 @@ public class Edge {
     public int weight;
     Edge next;
 
-    public Edge(int t, int w) {
+    public Edge(int t, int w, Edge n) {
 
         this.to = t;
         this.weight = w;
+        this.next = n;
     }
 }
