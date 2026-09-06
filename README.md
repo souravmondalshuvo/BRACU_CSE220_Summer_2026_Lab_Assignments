@@ -23,7 +23,12 @@ Each folder corresponds to a specific lab assignment:
 CSE220_Summer_2026_Lab_Assignments/
 ├── CSE220 Summer 2026 Lab Assignments 1/
 ├── CSE220 Summer 2026 Lab Assignments 2/
+    ├── 
+    ├──
 ├── CSE220 Summer 2026 Lab Assignments 3/
+├── CSE220 Summer 2026 Lab Assignments 4/
+├── CSE220 Summer 2026 Lab Assignments 5/
+├── CSE220 Summer 2026 Lab Assignments 6/
 ├── .gitignore
 ├── LICENSE
 └── README.md
