@@ -2,16 +2,35 @@ public class Task0Tester {
 
     public static void main(String[] args) {
 
-        System.out.println("Task 0a: Adjacency Matrix");
-        Task0.printMatrix(GraphData.undirectedWeightedMatrix());
+        int[][] undirectedMatrix = GraphData.undirectedWeightedMatrix();
+        Edge[] undirectedList = GraphData.undirectedWeightedList();
+        int[][] directedMatrix = GraphData.directedWeightedMatrix();
+        Edge[] directedList = GraphData.directedWeightedList();
 
-        System.out.println("\nTask 0b: Adjacency List");
-        Task0.printList(GraphData.undirectedWeightedList());
+        GraphData.header("===== Task 0a: Undirected Adjacency Matrix =====");
+        Task0.printMatrix(undirectedMatrix);
+        System.out.println();
 
-        System.out.println("\nDirected Adjacency Matrix");
-        Task0.printMatrix(GraphData.directedWeightedMatrix());
+        GraphData.checkValue("Task 0a undirected cell count", 24, GraphData.countMatrixCells(undirectedMatrix));
 
-        System.out.println("\nDirected Adjacency List");
-        Task0.printList(GraphData.directedWeightedList());
+        GraphData.checkFlag("Task 0a matrix is symmetric", true, GraphData.isSymmetric(undirectedMatrix));
+
+        GraphData.header("===== Task 0b: Undirected Adjacency List =====");
+        Task0.printList(undirectedList);
+        System.out.println();
+
+        GraphData.checkValue("Task 0b undirected node count", 24, GraphData.countListNodes(undirectedList));
+
+        GraphData.header("===== Task 0a: Directed Adjacency Matrix =====");
+        Task0.printMatrix(directedMatrix);
+        System.out.println();
+
+        GraphData.checkValue("Task 0a directed cell count", 12, GraphData.countMatrixCells(directedMatrix));
+
+        GraphData.header("===== Task 0b: Directed Adjacency List =====");
+        Task0.printList(directedList);
+        System.out.println();
+
+        GraphData.checkValue("Task 0b directed node count", 12, GraphData.countListNodes(directedList));
     }
 }
